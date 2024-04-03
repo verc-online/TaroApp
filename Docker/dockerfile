@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest AS build
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Pwd12345
+ENV MSSQL_COLLATION=Latin1_General_100_CI_AS_SC_UTF8
+
+WORKDIR /tmp
+
+COPY TaroSuits_1.sql .
+COPY TaroCards_1.sql .
+COPY CardMeanings.sql .
+
+
+RUN /opt/mssql/bin/sqlservr --accept-eula & sleep 10 \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroSuits_1.sql \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroCards_1.sql \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/CardMeanings.sql \
+    && pkill sqlservr
+
+FROM mcr.microsoft.com/mssql/server:2019-latest AS release
+ENV ACCEPT_EULA=Y
+COPY --from=build /var/opt/mssql/data /var/opt/mssql/data
+

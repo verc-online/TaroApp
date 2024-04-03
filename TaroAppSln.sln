@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaroAppLibrary", "TaroAppLibrary\TaroAppLibrary.csproj", "{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTaroApp", "ConsoleTaroApp\ConsoleTaroApp.csproj", "{FBF7C466-975A-4932-B930-37CE103A906C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF7C466-975A-4932-B930-37CE103A906C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF7C466-975A-4932-B930-37CE103A906C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF7C466-975A-4932-B930-37CE103A906C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF7C466-975A-4932-B930-37CE103A906C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
