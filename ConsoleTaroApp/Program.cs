@@ -15,13 +15,13 @@ class Program
         SqlData db = GetDb();
         string imagePath = Path.Combine(Environment.CurrentDirectory, "test.jpeg");
         
-        // DropCardMeaning(db, 3);
-        // CreateCardMeaning(db, 1, "Любовь", "Очень любит Полечку", "Не может не любить Полечку");
+        // DropCardMeaning(db, 2);
+        CreateCardMeaning(db, 1, "Любовь", "Очень любит Полечку", "Не может не любить Полечку");
         // GetCardMeaningDetail(db, 3);
         // EditCardMeaning(db, 1, "Супер любовь", "Очень любит Полечку", "Очень любит всех!");
 
         // UpdateCardDetails(db, 1, "Любит Полечку", imagePath);
-        // FullCardModel shut = ReadCardDetails(db, 1);
+        FullCardModel shut = ReadCardDetails(db, 1);
         // List<SuitModel> suitsWithCards = GetAllSuitsWithCards(db);
     }
 

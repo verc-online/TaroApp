@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaroAppLibrary", "TaroAppLibrary\TaroAppLibrary.csproj", "{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaroAppLibrary", "TaroAppLibrary\TaroAppLibrary.csproj", "{D920FDCD-1C26-4469-A21D-12B2B6B9F3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTaroApp", "ConsoleTaroApp\ConsoleTaroApp.csproj", "{FBF7C466-975A-4932-B930-37CE103A906C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTaroApp", "ConsoleTaroApp\ConsoleTaroApp.csproj", "{FBF7C466-975A-4932-B930-37CE103A906C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaroAdminDesktopApp", "TaroAdminDesktopApp\TaroAdminDesktopApp.csproj", "{FA164DBD-A157-4FEF-81A4-B3F69D515004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{FBF7C466-975A-4932-B930-37CE103A906C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF7C466-975A-4932-B930-37CE103A906C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBF7C466-975A-4932-B930-37CE103A906C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27660483-FB0A-46BC-AEEE-A4A571F19F12}
 	EndGlobalSection
 EndGlobal
