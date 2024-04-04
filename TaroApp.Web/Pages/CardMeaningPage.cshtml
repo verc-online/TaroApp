@@ -1,0 +1,26 @@
+﻿@page
+@model TaroApp.Web.Pages.CardMeaningPageModel
+@{
+}
+<h1>Добавить значение для карты</h1>
+
+<form method="post">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Сфера жизни</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" asp-for="@Model.Subject">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Прямое значение</span>
+        <textarea class="form-control" aria-label="With textarea" asp-for="@Model.Straight"></textarea>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Перевернутое значение</span>
+        <textarea class="form-control" aria-label="With textarea" asp-for="@Model.Reverse"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    <a asp-page="/TaroCard" asp-route-cardId="@Model.CardId" class="btn btn-close"></a>
+
+</form>

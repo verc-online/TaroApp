@@ -39,9 +39,10 @@ public class SqlData : IDatabaseData
         List<CardMeaningModel> meanings =
             _db.LoadData<CardMeaningModel, dynamic>(sql, new { Id = id }, connectionStringName);
 
-        sql = @"SELECT T.Id, T.Title, T.ImageDesc, T.CardImage, T.SuitId, TS.Title as SuitTitle
+        sql = @"SELECT T.Id, T.Title, T.ImageDesc, T.CardImage, T.SuitId, TS.Title as SuitTitle, TS.Postfix as Postfix
                 FROM dbo.TaroCards T 
-                INNER JOIN dbo.TaroSuits TS on TS.Id = T.SuitId";
+                INNER JOIN dbo.TaroSuits TS on TS.Id = T.SuitId
+                WHERE T.Id = @Id";
         FullCardModel output = _db.LoadData<FullCardModel, dynamic>(sql, new { Id = id }, connectionStringName)
             .First();
 
@@ -68,15 +69,8 @@ public class SqlData : IDatabaseData
     {
         string sql = @"INSERT INTO CardMeanings (CardId, Subject, Straight, Reverse) 
                                     VALUES (@CardId, @Subject, @Straight, @Reverse);";
-        try
-        {
-            _db.SaveData(sql, new { cardId, subject, straight, reverse }, connectionStringName);
-        }
-        catch (Microsoft.Data.SqlClient.SqlException e)
-        {
-            Console.WriteLine("Constraint error");
-            // throw;
-        }
+
+        _db.SaveData(sql, new { cardId, subject, straight, reverse }, connectionStringName);
     }
 
     public CardMeaningModel ReadCardMeaning(int id)

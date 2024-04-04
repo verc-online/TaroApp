@@ -1,0 +1,47 @@
+﻿@page "{cardId:int}"
+@model TaroApp.Web.Pages.TaroCardModel
+@{
+    ViewData["Title"] = $"{@Model.Card.Title}";
+    if (Model.Card.Postfix is not null)
+    {
+        ViewData["Title"] += $" {Model.Card.Postfix} ";
+    }
+}
+<div class="d-flex p-2 flex-wrap justify-content-center gap-5">
+    <div>
+        <h1 class="text-center">@ViewData["Title"]</h1>
+        @if (Model.Card.CardImage is not null)
+        {
+            <img class="mx-auto"
+                 style="width: 200px;"
+                 src="data:image/jpg;base64,@Convert.ToBase64String(Model.Card.CardImage)"
+                 alt="@ViewData["Title"]">
+        }
+        <h2 class="text-center">Описание карты</h2>
+        <p>
+            @Model.Card.ImageDesc
+        </p>
+        <a asp-page="/TaroCardEdit" asp-route-cardId="@Model.Card.Id">Редактировать</a>
+    </div>
+    <div>
+        <h2>Значения карты</h2>
+        <input type="checkbox" id="reverse" class="reverseCheckbox"/>
+        <label for="reverse">Перевернутое</label>
+
+        @foreach (var meaning in @Model.Card.Meanings)
+        {
+            <div class="border rounded-2 p-4 mb-1">
+                <h3>@meaning.Subject</h3>
+                <hr>
+                <p class="straightMeaning">@meaning.Straight</p>
+                <p class="reverseMeaning">@meaning.Reverse</p>
+
+                <a asp-page="/CardMeaningPage" asp-route-cardId="@Model.Card.Id" asp-route-meaningId="@meaning.Id">Редактировать</a>
+                <a asp-page="/CardMeaningConfirmDelete" asp-route-meaningId="@meaning.Id" asp-route-cardId="@Model.Card.Id">Удалить</a>
+
+            </div>
+        }
+        <a asp-page="/CardMeaningPage" asp-route-cardId="@Model.Card.Id">Добавить значение</a>
+    </div>
+
+</div>

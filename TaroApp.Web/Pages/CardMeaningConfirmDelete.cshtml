@@ -1,0 +1,10 @@
+﻿@page
+@model TaroApp.Web.Pages.CardMeaningConfirmDeleteModel
+@{
+    ViewData["Title"] = "Подтверждение удаления";
+}
+<h1>Удаление значения карты</h1>
+<form method="post">
+    <button type="submit">Удалить</button>
+    <a asp-page="/TaroCard" asp-route-cardId="@Model.Meaning.CardId" class="btn btn-close"></a>
+</form>

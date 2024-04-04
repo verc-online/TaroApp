@@ -1,0 +1,34 @@
+﻿@page
+@model TaroApp.Web.Pages.TaroCardsModel
+@{
+    ViewData["Title"] = "Значения Карт Таро";
+}
+<h1>@ViewData["Title"]</h1>
+@if (Model.SuitsWithCards?.Count > 0)
+{
+    <div class="container d-grid gap-3 d-flex flex-row">
+        @foreach (var suit in Model.SuitsWithCards)
+        {
+            <div class="p-2">
+                <h2>@suit.Title</h2>
+                <ul class="d-grid gap-1 list-unstyled">
+                    @foreach (var card in suit.Cards)
+                    {
+                        <li class="border rounded-2 p-2">
+                            <a asp-page="/TaroCard" asp-route-cardId="@card.Id">
+                                @if (card.CardImage is not null)
+                                {
+                                    <span>
+                                        <img style="height: 50px;" src="data:image/jpg;base64,@Convert.ToBase64String(card.CardImage)" alt="@suit.Postfix @card.Title">
+                                    </span>
+                                }
+                                @card.Title
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+
+    </div>
+}

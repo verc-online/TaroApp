@@ -16,11 +16,11 @@ class Program
         string imagePath = Path.Combine(Environment.CurrentDirectory, "test.jpeg");
         
         // DropCardMeaning(db, 2);
-        CreateCardMeaning(db, 1, "Любовь", "Очень любит Полечку", "Не может не любить Полечку");
+        // CreateCardMeaning(db, 1, "Любовь", "Очень любит Полечку", "Не может не любить Полечку");
         // GetCardMeaningDetail(db, 3);
         // EditCardMeaning(db, 1, "Супер любовь", "Очень любит Полечку", "Очень любит всех!");
 
-        // UpdateCardDetails(db, 1, "Любит Полечку", imagePath);
+        UpdateCardDetails(db, 1, "Любит Полечку", imagePath);
         FullCardModel shut = ReadCardDetails(db, 1);
         // List<SuitModel> suitsWithCards = GetAllSuitsWithCards(db);
     }
