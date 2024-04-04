@@ -5,14 +5,14 @@ ENV MSSQL_COLLATION=Latin1_General_100_CI_AS_SC_UTF8
 
 WORKDIR /tmp
 
-COPY TaroSuits_1.sql .
-COPY TaroCards_1.sql .
+COPY TaroSuits.sql .
+COPY TaroCards.sql .
 COPY CardMeanings.sql .
 
 
 RUN /opt/mssql/bin/sqlservr --accept-eula & sleep 10 \
-    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroSuits_1.sql \
-    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroCards_1.sql \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroSuits.sql \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/TaroCards.sql \
     && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345" -i /tmp/CardMeanings.sql \
     && pkill sqlservr
 

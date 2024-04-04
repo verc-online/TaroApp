@@ -3,8 +3,8 @@ create table TaroSuits
     Id      int identity
         constraint TaroSuits_pk
             primary key,
-    Title   nvarchar(50) not null,
-    Postfix nvarchar(10)
+    Title   nvarchar(50) not null collate Latin1_General_100_CI_AS_SC_UTF8,
+    Postfix nvarchar(10) collate Latin1_General_100_CI_AS_SC_UTF8
 )
 go
 

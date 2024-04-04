@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTaroApp", "ConsoleTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaroAdminDesktopApp", "TaroAdminDesktopApp\TaroAdminDesktopApp.csproj", "{FA164DBD-A157-4FEF-81A4-B3F69D515004}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaroApp.Web", "TaroApp.Web\TaroApp.Web.csproj", "{0C138E24-DB42-40A5-A609-DE330755CDBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA164DBD-A157-4FEF-81A4-B3F69D515004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C138E24-DB42-40A5-A609-DE330755CDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C138E24-DB42-40A5-A609-DE330755CDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C138E24-DB42-40A5-A609-DE330755CDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C138E24-DB42-40A5-A609-DE330755CDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
